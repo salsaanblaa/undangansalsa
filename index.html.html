@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Undangan</title>
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .yth {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 6px;
+    }
+
+    .nama {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      font-size: 12px;
+      padding: 8px 22px;
+      background: #ebddc2;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="yth">Kepada Yth.</div>
+    <div class="nama" id="namaTamu">Tamu Undangan</div>
+    <button class="btn" onclick="buka()">Buka Undangan</button>
+  </div>
+
+  <script>
+    // ambil nama tamu dari URL
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("to");
+    if (nama) {
+      document.getElementById("namaTamu").innerText =
+        decodeURIComponent(nama);
+    }
+
+    // pindah ke Canva
+    function buka() {
+      window.location.href = "https://templatebysalsaanblaa.my.canva.site/salsagunawan-wedding-invitation";
+    }
+  </script>
+
+</body>
+</html>
